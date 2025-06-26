@@ -10,6 +10,7 @@ use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class PostForm extends Component
 {
@@ -25,6 +26,8 @@ class PostForm extends Component
     public $status = 'draft';
     public $published_at;
     public $selectedCategories = [];
+    public $selectingFromMedia = false;
+    public $mediaFiles = [];
 
     public $allCategories;
 
@@ -152,6 +155,19 @@ class PostForm extends Component
 
         $this->dispatch('postSaved')->to(PostList::class);
         $this->dispatch('closePostFormModal');
+    }
+
+    public function openMediaLibrary()
+    {
+        $this->mediaFiles = collect(Storage::disk('public')->files('image'))->sortDesc()->toArray();
+        $this->selectingFromMedia = true;
+    }
+
+    public function selectMedia($path)
+    {
+        $this->currentImage = $path;
+        $this->image = null;
+        $this->selectingFromMedia = false;
     }
 
     /**
