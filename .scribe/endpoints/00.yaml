@@ -1,0 +1,130 @@
+name: Posts
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/posts
+    metadata:
+      groupName: Posts
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        List published posts
+
+        Returns a paginated list of published posts ordered by published date.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'Optional. The page number.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "data": [
+              {
+                "id": 1,
+                "title": "First Post",
+                "slug": "first-post",
+                "excerpt": "...",
+                "content": "...",
+                "image_url": "https://example.com/storage/image.jpg",
+                "published_at": "2025-06-25",
+                "categories": [...]
+              }
+            ],
+            "links": {...},
+            "meta": {...}
+          }
+        headers: []
+        description: Success
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/posts/{slug}'
+    metadata:
+      groupName: Posts
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Show post by slug
+
+        Returns a single post by its slug.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the post.'
+        required: true
+        example: hello-world
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      slug: hello-world
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "id": 1,
+            "title": "Hello World",
+            ...
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 404
+        content: '{"message": "No query results for model [Post]"}'
+        headers: []
+        description: 'Not Found'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
