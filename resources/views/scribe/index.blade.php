@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Laravel API Documentation</title>
+    <title>Palm Code API Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "http://palmcode.test";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -121,7 +121,7 @@ Returns a single post by its slug.</a>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 26, 2025</li>
+        <li>Last updated: June 27, 2025</li>
     </ul>
 </div>
 
@@ -130,7 +130,7 @@ Returns a single post by its slug.</a>
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>http://palmcode.test</code>
 </aside>
 <pre><code>This documentation aims to provide all the information you need to work with our API.
 
@@ -159,14 +159,14 @@ Returns a list of all categories, including posts if loaded.</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/categories" \
+    --get "http://palmcode.test/api/categories" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/categories"
+    "http://palmcode.test/api/categories"
 );
 
 const headers = {
@@ -286,14 +286,14 @@ Returns all pages with status &#039;published&#039;.</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/pages" \
+    --get "http://palmcode.test/api/pages" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/pages"
+    "http://palmcode.test/api/pages"
 );
 
 const headers = {
@@ -411,14 +411,14 @@ Returns a single page by its slug.</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/pages/contact" \
+    --get "http://palmcode.test/api/pages/contact" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/pages/contact"
+    "http://palmcode.test/api/pages/contact"
 );
 
 const headers = {
@@ -557,14 +557,14 @@ Returns a paginated list of published posts ordered by published date.</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/posts?page=1" \
+    --get "http://palmcode.test/api/posts?page=1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/posts"
+    "http://palmcode.test/api/posts"
 );
 
 const params = {
@@ -707,14 +707,14 @@ Returns a single post by its slug.</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/posts/hello-world" \
+    --get "http://palmcode.test/api/posts/hello-world" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/posts/hello-world"
+    "http://palmcode.test/api/posts/hello-world"
 );
 
 const headers = {
